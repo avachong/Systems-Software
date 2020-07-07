@@ -1,0 +1,22 @@
+=== Dump_heap() function works properly test ===
+brk: 0x602000
+head->NULL
+=== Allocates single 32-byte block test ===
+brk: 0x602038
+head->[1:0:56]->NULL
+=== Free single 32-byte block / Reduces size of heap appropriately test ===
+brk: 0x602000
+head->NULL
+=== Coalesce blocks correctly test ===
+brk: 0x602188
+head->[1:0:56]->[0:56:56]->[1:112:56]->[0:168:56]->[1:224:56]->[1:280:56]->[1:336:56]->NULL
+brk: 0x602188
+head->[1:0:56]->[0:56:168]->[1:224:56]->[1:280:56]->[1:336:56]->NULL
+=== Splits blocks correctly test ===
+brk: 0x602188
+head->[1:0:56]->[1:56:56]->[0:112:112]->[1:224:56]->[1:280:56]->[1:336:56]->NULL
+=== Finds best fitting block correctly test ===
+brk: 0x602188
+head->[1:0:56]->[1:56:56]->[0:112:112]->[1:224:56]->[0:280:56]->[1:336:56]->NULL
+brk: 0x602188
+head->[1:0:56]->[1:56:56]->[0:112:112]->[1:224:56]->[1:280:56]->[1:336:56]->NULL
