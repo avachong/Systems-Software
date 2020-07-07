@@ -1,0 +1,12 @@
+---
+:id: 15730565
+:submitters:
+- :name: Ava Chong
+  :email: alc260@pitt.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2019-03-18 17:34:42.143478000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2019-03-18 10:34:42.143478000 Z
+:status: processed
+:score: 91.0
